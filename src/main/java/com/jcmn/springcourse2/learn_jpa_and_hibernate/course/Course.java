@@ -1,11 +1,20 @@
 package com.jcmn.springcourse2.learn_jpa_and_hibernate.course;
 
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-@Component
+// With entity we are mapping these bean to the SQL Table.
+@Entity (name = "Course")
 public class Course {
+
+    @Id
     private long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "author")
     private String author;
 
     public Course() {
