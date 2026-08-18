@@ -5,6 +5,12 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 public interface CourseSpringDataJpaRepository extends JpaRepository<Course, Long> {
 
+    // Apart from the default methods, we can create custom methods
+    List<Course> findByAuthor(String author);
+
+    List<Course> findByName(String name);
 }
